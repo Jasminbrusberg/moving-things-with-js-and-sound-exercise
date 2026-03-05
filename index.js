@@ -31,11 +31,21 @@ if (bottom < 360) {
 }
 }
 
+function moveDodgerDown () {
+const bottomNumbers = dodger.style.bottom.replace("px", "")
+const bottom = parseInt(bottomNumbers, 10); 
+
+if (bottom > 0) {
+    dodger.style.bottom = `${bottom - 1}px`;
+}
+}
+
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") moveDodgerLeft();
   if (e.key === "ArrowRight") moveDodgerRight();
   if (e.key === "ArrowUp") moveDodgerUp();
+  if (e.key === "ArrowDown") moveDodgerDown();
 });
 
 
