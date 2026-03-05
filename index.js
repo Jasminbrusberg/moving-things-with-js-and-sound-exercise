@@ -40,13 +40,23 @@ if (bottom > 0) {
 }
 }
 
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") moveDodgerLeft();
+     playSoundOnMovement();
   if (e.key === "ArrowRight") moveDodgerRight();
+     playSoundOnMovement();
   if (e.key === "ArrowUp") moveDodgerUp();
+     playSoundOnMovement();
   if (e.key === "ArrowDown") moveDodgerDown();
+     playSoundOnMovement();
 });
+
+const movementSound = document.getElementById("movement");
+
+function playSoundOnMovement() {
+  movementSound.currentTime = 0;
+  movementSound.play();
+}
 
 
 
